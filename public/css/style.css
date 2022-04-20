@@ -1,0 +1,95 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+.container {
+  background-image: url('../img//비행기날개.jpg');
+  width: 100%;
+  min-height: 917px;
+  display: flex;
+  justify-content: center;
+}
+.main {
+  padding: 10px;
+  width: 100%;
+  display: flex;
+  flex-flow: column nowrap;
+}
+
+/* main top */
+.main_top {
+  /* box-sizing: border-box; */
+  background-color: #aaa;
+  flex: 0 0 auto;
+  display: flex;
+  flex-flow: column nowrap;
+  position: relative;
+  height: 60px;
+  justify-content: center;
+  align-items: flex-end;
+}
+.main_top_top {
+  /* display: flex; */
+  vertical-align: center;
+  display: flex;
+  flex-flow: row nowrap;
+}
+/* img {
+  border: 1px solid yellow;
+  width: 20px;
+  height: 40px;
+  margin: 0;
+  padding: 0;
+} */
+.weather_icon {
+  /* display: inline-block; */
+  position: absolute;
+  top: 0;
+  right: 40px;
+  margin: 0;
+  padding: 0;
+}
+.main_top_bottom {
+  padding-right: 5px;
+  color: #fff;
+}
+.c_temp {
+  font-size: 30px;
+  font-weight: 500;
+  color: #fff;
+}
+.c_temp::after {
+  content: '°';
+}
+
+/* main middle */
+.gap1 {
+  display: flex;
+  /* flex: 1 1 50%; */
+  flex: 1;
+}
+.gap2 {
+  display: flex;
+  /* flex: 1 1 50%; */
+  flex: 1;
+}
+.now_clock {
+  /* border: 1px solid #000; */
+  font-size: 1050%;
+  display: flex;
+  background-color: rgba(0, 0, 0, 0.3);
+  justify-content: center;
+}
+
+/* main bottom */
+.main_bottom {
+  height: 60px;
+  background-color: #eee;
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+}
+.todos {
+  cursor: pointer;
+}

@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>toy- Browser Theme</title>
+    <link rel="stylesheet" href="../css/style.css" />
+  </head>
+  <script
+    src="https://code.jquery.com/jquery-3.6.0.min.js"
+    integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4="
+    crossorigin="anonymous"
+  ></script>
+  <script>
+    const weather_api_key = '026ab543b433f9fb5be49ecf54e39b91';
+    const city_name = 'Seoul';
+    const k_temp = 273.15;
+    $.getJSON(
+      `https://api.openweathermap.org/data/2.5/weather?q=${city_name}&appid=${weather_api_key}`,
+      function (result) {
+        $('.c_temp').append(Math.floor(result.main.temp - k_temp));
+        console.log(result.main.temp, 'temp');
+        console.log(typeof result.main.temp_max, 'temp');
+        console.log(typeof k_temp, 'k-tmep');
+        let w_icon =
+          '<img src="http://openweathermap.org/img/w/' +
+          result.weather[0].icon +
+          '.png" alt="' +
+          result.weather[0].description +
+          '" />';
+        $('.weather_icon').html(w_icon);
+        $('.city_name').append(result.name);
+      }
+    );
+  </script>
+  <body>
+    <div class="container">
+      <main class="main">
+        <div class="main_top">
+          <div class="main_top_top">
+            <span class="weather_icon"></span>
+            <span class="c_temp"></span>
+          </div>
+          <div class="main_top_bottom">
+            <div class="city_name"></div>
+          </div>
+        </div>
+        <div class="gap1"></div>
+        <div class="now_clock">00:00</div>
+        <div class="gap2"></div>
+        <div class="main_bottom">
+          <div class="who_made">구글</div>
+          <div class="famous_saying">no pain, no gain</div>
+          <div class="todos">오늘 할 일</div>
+        </div>
+      </main>
+    </div>
+  </body>
+</html>
