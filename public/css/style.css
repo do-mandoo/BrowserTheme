@@ -4,7 +4,7 @@
   padding: 0;
 }
 .container {
-  background-image: url('../img//비행기날개.jpg');
+  /* background-image: url('../img/5.jpg'); */
   width: 100%;
   min-height: 917px;
   display: flex;
@@ -23,13 +23,22 @@
   background-color: #aaa;
   flex: 0 0 auto;
   display: flex;
-  flex-flow: column nowrap;
-  position: relative;
+  flex-flow: row nowrap;
+  /* position: relative; */
   height: 60px;
-  justify-content: center;
+  justify-content: flex-end;
   align-items: flex-end;
 }
-.main_top_top {
+.jquery_weather {
+  border: 1px solid red;
+  /* width: 100px; */
+}
+.json_weather {
+  border: 1px solid blue;
+  /* width: 100px; */
+}
+.main_top_top,
+.main_top_top1 {
   /* display: flex; */
   vertical-align: center;
   display: flex;
@@ -42,44 +51,83 @@
   margin: 0;
   padding: 0;
 } */
-.weather_icon {
+.weather_icon,
+.weather_icon1 {
   /* display: inline-block; */
-  position: absolute;
+  /* position: absolute;
   top: 0;
-  right: 40px;
+  right: 40px; */
   margin: 0;
   padding: 0;
 }
-.main_top_bottom {
+
+.main_top_bottom,
+.main_top_bottom1 {
   padding-right: 5px;
   color: #fff;
 }
-.c_temp {
+.c_temp,
+.c_temp1 {
   font-size: 30px;
   font-weight: 500;
   color: #fff;
 }
-.c_temp::after {
+.c_temp::after,
+.c_temp1::after {
   content: '°';
 }
 
 /* main middle */
-.gap1 {
-  display: flex;
-  /* flex: 1 1 50%; */
-  flex: 1;
-}
+.gap1,
 .gap2 {
   display: flex;
   /* flex: 1 1 50%; */
   flex: 1;
+  color: #fff;
+  text-shadow: -1px 0 #000, 0 1px #000, 1px 0 #000, 0 -1px #000;
+  flex-flow: column nowrap;
+  align-items: center;
+  justify-content: center;
 }
+.gap1 > form,
+.gap2 > div > div {
+  display: flex;
+  margin: 0 auto;
+}
+.submit_btn {
+  cursor: pointer;
+}
+.gap2 > div > div {
+  margin-bottom: 30px;
+  font-size: 35px;
+  font-weight: bold;
+}
+
+.focus_today_input {
+  display: flex;
+  width: 100%;
+  border: none;
+  border-bottom: 3px solid #fff;
+  background: none;
+  padding: 5px 3px;
+  font-size: 35px;
+  color: #fff;
+  text-align: center;
+}
+.focus_today_input:focus {
+  outline: none;
+}
+
 .now_clock {
   /* border: 1px solid #000; */
   font-size: 1050%;
   display: flex;
   background-color: rgba(0, 0, 0, 0.3);
   justify-content: center;
+  color: #fff;
+}
+.greeting_time {
+  color: #fff;
 }
 
 /* main bottom */
@@ -90,6 +138,111 @@
   justify-content: space-between;
   align-items: flex-end;
 }
+/* -------------------------------------------------------------------------------------- */
+/* todos */
+.todos_container {
+  position: relative;
+}
+.main_todos {
+  opacity: 1;
+  display: flex;
+  flex-flow: column nowrap;
+  background-color: #aaa;
+  width: 350px;
+  height: 300px;
+  position: absolute;
+  bottom: 66px;
+  right: 0;
+  /* padding: 20px; */
+  /* border: 2px dashed blue; */
+  justify-content: flex-end;
+  transition: opacity 0.2s ease-in;
+  border-radius: 15px;
+  /* border-bottom-left-radius: 15px;
+  border-bottom-right-radius: 15px; */
+}
+.hidden {
+  opacity: 0;
+  transition: opacity, 0.2s ease-out;
+}
+.todos_list_area {
+  /* border: 1px solid green; */
+  min-height: 210px;
+  overflow: auto;
+  margin: 10px 0;
+  width: 100%;
+  padding: 0 20px;
+}
+.input_area {
+  display: flex;
+  /* border: 1px solid red; */
+  height: auto;
+  /* border: 2px solid #000; */
+  margin-bottom: 10px;
+
+  width: 100%;
+  border-radius: 25px;
+  border: 3px solid yellowgreen;
+}
 .todos {
+  list-style-type: none;
+  padding: 0;
+}
+.input_todo {
+  padding: 5px 4px;
+  font-size: 18px;
+  width: 100%;
+  margin-left: -30px;
+  /* margin-bottom: 20px; */
+  border: none;
+  padding-left: 40px;
+  border-radius: 50px;
+}
+
+.add_todo {
+  border: none;
+  font-size: 18px;
+  font-weight: 600;
+  height: 100%;
+  width: 30px;
+  border-radius: 50px;
+  z-index: 1;
+}
+.todos > li > label > span {
+  display: inline-block;
+  min-width: 200px;
+  /* width: 80%; */
+  padding: 0 20px;
+  /* color: blue; */
+}
+.todos > li > label > input[type='checkbox']:checked + span {
+  text-decoration: line-through;
+  color: rgba(0, 0, 0, 0.4);
+}
+input[type='checkbox'] {
+  /* Double-sized Checkboxes */
+  -ms-transform: scale(1.5); /* IE */
+  -moz-transform: scale(1.5); /* FF */
+  -webkit-transform: scale(1.5); /* Safari and Chrome */
+  -o-transform: scale(1.5); /* Opera */
+  padding: 5px;
+}
+.todo_title {
+  border: none;
+  background-color: #ccc;
   cursor: pointer;
+  font-size: 20px;
+  padding: 5px 10px;
+}
+.remove {
+  padding: 3px 9px;
+  cursor: pointer;
+}
+.remove:hover {
+  background-color: tomato;
+  border: none;
+  border: 1px solid red;
+}
+.todos > li {
+  margin-bottom: 5px;
 }

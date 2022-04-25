@@ -1,0 +1,22 @@
+export default [
+  {
+    id: 1,
+    phrase: "the end, it's not end.",
+  },
+  {
+    id: 2,
+    phrase: 'im fine. im good.',
+  },
+  {
+    id: 3,
+    phrase: 'no pain, no gain.',
+  },
+  {
+    id: 4,
+    phrase: 'just do it.',
+  },
+  {
+    id: 5,
+    phrase: 'higher, far.',
+  },
+];

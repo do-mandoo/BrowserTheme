@@ -16,5 +16,9 @@
   "bugs": {
     "url": "https://github.com/do-mandoo/BrowserTheme/issues"
   },
-  "homepage": "https://github.com/do-mandoo/BrowserTheme#readme"
+  "homepage": "https://github.com/do-mandoo/BrowserTheme#readme",
+  "dependencies": {
+    "csvtojson": "^2.0.10",
+    "json2csv": "^5.0.7"
+  }
 }

@@ -13,6 +13,7 @@
     crossorigin="anonymous"
   ></script>
   <script>
+    // jQuery, ajax 부분.
     const weather_api_key = '026ab543b433f9fb5be49ecf54e39b91';
     const city_name = 'Seoul';
     const k_temp = 273.15;
@@ -20,10 +21,10 @@
       `https://api.openweathermap.org/data/2.5/weather?q=${city_name}&appid=${weather_api_key}`,
       function (result) {
         $('.c_temp').append(Math.floor(result.main.temp - k_temp));
-        console.log(result.main.temp, 'temp');
-        console.log(typeof result.main.temp_max, 'temp');
-        console.log(typeof k_temp, 'k-tmep');
-        let w_icon =
+        // console.log(result.main.temp, 'temp');
+        // console.log(typeof result.main.temp_max, 'temp');
+        // console.log(typeof k_temp, 'k-tmep');
+        const w_icon =
           '<img src="http://openweathermap.org/img/w/' +
           result.weather[0].icon +
           '.png" alt="' +
@@ -33,28 +34,86 @@
         $('.city_name').append(result.name);
       }
     );
+    // const $famousSaying = document.querySelector('.famous_saying');
+
+    // $get_json('../saying.json');
   </script>
   <body>
     <div class="container">
       <main class="main">
         <div class="main_top">
-          <div class="main_top_top">
-            <span class="weather_icon"></span>
-            <span class="c_temp"></span>
+          <div class="jquery_weather">
+            <div class="main_top_top">
+              <span class="weather_icon"></span>
+              <span class="c_temp"></span>
+            </div>
+            <div class="main_top_bottom">
+              <div class="city_name"></div>
+            </div>
           </div>
-          <div class="main_top_bottom">
-            <div class="city_name"></div>
+          <div class="json_weather">
+            <div class="main_top_top1">
+              <span class="weather_icon1"></span>
+              <span class="c_temp1"></span>
+            </div>
+            <div class="main_top_bottom1">
+              <div class="city_name1"></div>
+            </div>
           </div>
         </div>
-        <div class="gap1"></div>
-        <div class="now_clock">00:00</div>
-        <div class="gap2"></div>
-        <div class="main_bottom">
-          <div class="who_made">구글</div>
-          <div class="famous_saying">no pain, no gain</div>
-          <div class="todos">오늘 할 일</div>
+        <div class="gap1">
+          <form class="search_form">
+            <!-- <div class="search_wrap"> -->
+            <select name="search_select" id="search_select">
+              <option value="google">GOOGLE</option>
+              <option value="naver">NAVER</option>
+            </select>
+            <input
+              type="text"
+              class="search_word"
+              placeholder="검색어를 입력하세요."
+              autocomplete="off"
+            />
+            <button class="submit_btn" type="submit">검색</button>
+            <!-- </div> -->
+          </form>
         </div>
+        <div class="time_zone">
+          <div class="now_clock"></div>
+          <div class="greeting_time">Good</div>
+        </div>
+        <div class="gap2">
+          <div>
+            <div>What is your main focus for today?</div>
+            <input type="text" class="focus_today_input" autocomplete="off" />
+          </div>
+        </div>
+        <footer class="main_bottom">
+          <div class="who_made">jjs</div>
+          <div class="famous_saying"></div>
+
+          <div class="todos_container">
+            <div class="main_todos hidden">
+              <!-- < action=""> submit이벤트 발생시키는 곳. -->
+              <div class="todos_list_area">
+                <ul class="todos">
+                  <!-- <li>
+                  <label><input type="checkbox"><span>HTML</span></label>
+                  <button class="remove">X</button>
+                </li> -->
+                </ul>
+              </div>
+              <div class="input_area">
+                <!-- form? -->
+                <button class="add_todo">+</button>
+                <input class="input_todo" type="text" placeholder="enter todo!" required />
+              </div>
+            </div>
+            <button class="todo_title">오늘 할 일 목록</button>
+          </div>
+        </footer>
       </main>
     </div>
+    <script type="module" src="../js/theme.js"></script>
   </body>
 </html>
