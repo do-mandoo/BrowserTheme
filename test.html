@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>json</title>
+  </head>
+  <body>
+    <h1>hi</h1>
+    <script>
+      const jsonData = fetch('./saying.json')
+        .then(response => {
+          return response.json();
+        })
+        .then(jsonData => console.log(jsonData.saying, 'jsondata'));
+    </script>
+    <!-- <script type="es6" src="./app.js"></script> -->
+  </body>
+</html>
