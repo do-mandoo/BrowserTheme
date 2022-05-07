@@ -62,8 +62,7 @@
           </div>
         </div>
         <div class="gap1">
-          <form class="search_form">
-            <!-- <div class="search_wrap"> -->
+          <!-- <form class="search_form">
             <select name="search_select" id="search_select">
               <option value="google">GOOGLE</option>
               <option value="naver">NAVER</option>
@@ -75,21 +74,32 @@
               autocomplete="off"
             />
             <button class="submit_btn" type="submit">검색</button>
-            <!-- </div> -->
-          </form>
+          </form> -->
+          <div>
+            <button class="searchEn google" value="google">GOOGLE</button>
+            <button class="searchEn naver" value="naver">NAVER</button>
+          </div>
         </div>
         <div class="time_zone">
           <div class="now_clock"></div>
-          <div class="greeting_time">Good</div>
+          <div class="greeting_time_user">
+            <span class="ts time_set"></span>
+            <span class="ts user_set">
+              <input type="text" class="ts user_name_input" autocomplete="off" />
+              <!-- <div class="text_username"></div> -->
+            </span>
+          </div>
         </div>
         <div class="gap2">
-          <div>
-            <div>What is your main focus for today?</div>
-            <input type="text" class="focus_today_input" autocomplete="off" />
+          <div class="ts focus_today_wrap">
+            <div class="focus_today_title">What is your main focus for today?</div>
+            <div class="today_todo_set">
+              <input type="text" class="focus_today_input" autocomplete="off" />
+            </div>
           </div>
         </div>
         <footer class="main_bottom">
-          <div class="who_made">jjs</div>
+          <div class="who_made">JinSol(do-mandoo)</div>
           <div class="famous_saying"></div>
 
           <div class="todos_container">

@@ -3,6 +3,9 @@
   margin: 0;
   padding: 0;
 }
+button {
+  cursor: pointer;
+}
 .container {
   /* background-image: url('../img/5.jpg'); */
   width: 100%;
@@ -20,7 +23,7 @@
 /* main top */
 .main_top {
   /* box-sizing: border-box; */
-  background-color: #aaa;
+  /* background-color: #aaa; */
   flex: 0 0 auto;
   display: flex;
   flex-flow: row nowrap;
@@ -34,7 +37,7 @@
   /* width: 100px; */
 }
 .json_weather {
-  border: 1px solid blue;
+  border: 2px dashed blue;
   /* width: 100px; */
 }
 .main_top_top,
@@ -84,12 +87,24 @@
   /* flex: 1 1 50%; */
   flex: 1;
   color: #fff;
-  text-shadow: -1px 0 #000, 0 1px #000, 1px 0 #000, 0 -1px #000;
   flex-flow: column nowrap;
   align-items: center;
-  justify-content: center;
+  /* justify-content: center; */
 }
-.gap1 > form,
+.searchEn {
+  width: 90px;
+  padding: 10px;
+  font-size: 16px;
+  font-weight: 600;
+  color: rgba(0, 0, 0, 0.5);
+  border: none;
+  border-radius: 10px;
+  background-color: rgba(255, 255, 255, 0.2);
+}
+.searchEn:hover {
+  background-color: #000;
+  color: #eee;
+}
 .gap2 > div > div {
   display: flex;
   margin: 0 auto;
@@ -97,12 +112,12 @@
 .submit_btn {
   cursor: pointer;
 }
-.gap2 > div > div {
-  margin-bottom: 30px;
+/* focus today todo, 포커스 투데이, 오늘 할 일 */
+.focus_today_wrap {
+  margin-top: 40px;
   font-size: 35px;
   font-weight: bold;
 }
-
 .focus_today_input {
   display: flex;
   width: 100%;
@@ -117,7 +132,25 @@
 .focus_today_input:focus {
   outline: none;
 }
+.focus_today_wrap > label {
+  line-height: normal;
+}
+.moreBtn {
+  margin-left: 20px;
+}
+.moreBtn > button {
+  cursor: pointer;
+  padding: 2px 8px;
+  margin-left: 5px;
+  border: 1px solid #000;
+}
+.moreBtn > button:hover {
+  background-color: #aaa;
+  border: 1px solid #000;
+  border-radius: 5px;
+}
 
+/* 현재시간 */
 .now_clock {
   /* border: 1px solid #000; */
   font-size: 1050%;
@@ -126,29 +159,60 @@
   justify-content: center;
   color: #fff;
 }
-.greeting_time {
+.greeting_time_user {
+  display: flex;
+  justify-content: center;
+  font-weight: bold;
+}
+.user_set {
+  margin-left: 10px;
+}
+.ts {
+  font-size: 30px;
   color: #fff;
+  text-shadow: -1px 0 #000, 0 1px #000, 1px 0 #000, 0 -1px #000;
+}
+.user_name_input {
+  width: 200px;
+  outline: none;
+  border: none;
+  background-color: unset;
+  padding-left: 20px;
+}
+.user_name_input:focus {
+  outline: none;
+  background-color: rgba(170, 170, 170, 0.5);
+}
+.wrap_username {
+  display: flex;
 }
 
-/* main bottom */
-.main_bottom {
+/* .main_bottom === footer */
+footer {
   height: 60px;
-  background-color: #eee;
+  /* background-color: #eee; */
   display: flex;
   justify-content: space-between;
-  align-items: flex-end;
+  align-items: center;
+}
+/* 만든사람, 명언 */
+.who_made,
+.famous_saying {
+  font-size: 18px;
+  color: #fff;
 }
 /* -------------------------------------------------------------------------------------- */
-/* todos */
+/* todos 할 일 목록*/
 .todos_container {
   position: relative;
 }
 .main_todos {
   opacity: 1;
+  display: block;
   display: flex;
   flex-flow: column nowrap;
-  background-color: #aaa;
-  width: 350px;
+  background-color: #ccc;
+  width: 400px;
   height: 300px;
   position: absolute;
   bottom: 66px;
@@ -162,6 +226,7 @@
   border-bottom-right-radius: 15px; */
 }
 .hidden {
+  display: none;
   opacity: 0;
   transition: opacity, 0.2s ease-out;
 }
@@ -178,8 +243,7 @@
   /* border: 1px solid red; */
   height: auto;
   /* border: 2px solid #000; */
-  margin-bottom: 10px;
-
+  /* margin-bottom: 10px; */
   width: 100%;
   border-radius: 25px;
   border: 3px solid yellowgreen;
@@ -208,14 +272,22 @@
   border-radius: 50px;
   z-index: 1;
 }
-.todos > li > label > span {
-  display: inline-block;
-  min-width: 200px;
-  /* width: 80%; */
-  padding: 0 20px;
-  /* color: blue; */
+.todos > li {
+  margin-bottom: 5px;
+  display: flex;
+  justify-content: space-evenly;
+  width: 350px;
 }
-.todos > li > label > input[type='checkbox']:checked + span {
+.todos > li > .wrap_label > .text_label {
+  display: inline-block;
+  width: 200px;
+  padding: 0 5px;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  overflow: hidden;
+}
+.todos > li > .wrap_label > input[type='checkbox']:checked + .text_label,
+.focus_today_wrap > label > input[type='checkbox']:checked + span {
   text-decoration: line-through;
   color: rgba(0, 0, 0, 0.4);
 }
@@ -226,23 +298,61 @@ input[type='checkbox'] {
   -webkit-transform: scale(1.5); /* Safari and Chrome */
   -o-transform: scale(1.5); /* Opera */
   padding: 5px;
+  margin-right: 10px;
 }
 .todo_title {
   border: none;
-  background-color: #ccc;
+  background-color: #eee;
   cursor: pointer;
-  font-size: 20px;
+  font-size: 18px;
+  font-weight: 600;
+  color: #bbb;
   padding: 5px 10px;
+  border-radius: 10px;
+}
+.todo_title:hover {
+  background-color: #000;
+  color: #eee;
+}
+.wrap_label {
+  position: relative;
+}
+
+.wrap_label > input[type='text'] {
+  display: none;
+}
+
+.text_input {
+  width: 200px;
+  position: absolute;
+  left: 25px;
+  top: 2px;
+  font-size: 18px;
+}
+.modify,
+.remove {
+  padding: 3px 5px;
+  cursor: pointer;
+  font-size: 11px;
+  border: 1px solid #eee;
+  border-radius: 10px;
 }
 .remove {
-  padding: 3px 9px;
-  cursor: pointer;
+  margin-left: 5px;
+}
+.edit_mode .wrap_label > input[type='text'] {
+  display: block;
+}
+.edit_mode .text_label {
+  display: none;
+}
+.modify:hover {
+  background-color: aquamarine;
+  border: none;
+  border: 1px solid aqua;
 }
 .remove:hover {
   background-color: tomato;
   border: none;
   border: 1px solid red;
-}
-.todos > li {
-  margin-bottom: 5px;
 }
