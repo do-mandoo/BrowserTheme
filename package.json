@@ -19,6 +19,7 @@
   "homepage": "https://github.com/do-mandoo/BrowserTheme#readme",
   "dependencies": {
     "csvtojson": "^2.0.10",
+    "js-yaml": "^4.1.0",
     "json2csv": "^5.0.7"
   }
 }
