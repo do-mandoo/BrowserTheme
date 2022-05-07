@@ -3,6 +3,15 @@ const fs = require('fs');
 const csv = require('csvtojson');
 const { Parser } = require('json2csv');
 
+// read csv파일
+fs.readFile('csv_test.csv', 'utf8', (err, data) => {
+  if (err) {
+    console.error(err);
+    return;
+  }
+  console.log(data, 'data');
+});
+
 const test = async () => {
   // load csv파일
   const cars = await csv().fromFile('csv_test.csv');
