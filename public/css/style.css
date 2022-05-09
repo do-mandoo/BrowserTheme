@@ -149,7 +149,6 @@ button {
   border: 1px solid #000;
   border-radius: 5px;
 }
-
 /* 현재시간 */
 .now_clock {
   /* border: 1px solid #000; */
@@ -172,21 +171,38 @@ button {
   color: #fff;
   text-shadow: -1px 0 #000, 0 1px #000, 1px 0 #000, 0 -1px #000;
 }
+.username {
+  margin-right: 10px;
+}
 .user_name_input {
-  width: 200px;
+  width: 250px;
   outline: none;
   border: none;
   background-color: unset;
-  padding-left: 20px;
+  padding-left: 10px;
+}
+.user_name_input::placeholder {
+  font-size: 20px;
+  color: rgba(255, 255, 255, 0.5);
 }
 .user_name_input:focus {
   outline: none;
-  background-color: rgba(170, 170, 170, 0.5);
+  background-color: #aaa;
 }
 .wrap_username {
   display: flex;
 }
-
+.username_moreBtn > button {
+  cursor: pointer;
+  padding: 2px 8px;
+  margin-left: 5px;
+  border: 1px solid #000;
+}
+.username_moreBtn > button:hover {
+  background-color: #aaa;
+  border: 1px solid #000;
+  border-radius: 5px;
+}
 /* .main_bottom === footer */
 footer {
   height: 60px;
