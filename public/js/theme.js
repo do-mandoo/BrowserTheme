@@ -52,38 +52,29 @@ $focusTodayInput.onkeypress = e => {
 };
 
 // TODO오늘 할 일 JS
-import { newTodo } from './todoList.js';
+import { $addTodo, saveTodo } from './todoList.js';
 
 const $inputTodo = document.querySelector('.input_todo');
-const $add = document.querySelector('.add_todo');
-const $todos = document.querySelector('.todos');
-const $button = document.querySelector('button');
+// const $button = document.querySelector('button');
 const $todoTitle = document.querySelector('.todo_title');
 const $mainTodos = document.querySelector('.main_todos');
 
 const TDL = 'tdlist';
-let todolistArr = [];
+// let todolistArr = [];
 
 $inputTodo.onkeypress = e => {
   if (e.key !== 'Enter' || !$inputTodo.value) return;
 
   $addTodo($inputTodo.value);
-  console.log(1);
+  // newTodo($inputTodo.value);
   saveTodo($inputTodo.value);
 
-  console.log(2);
   $inputTodo.value = '';
 };
 
 // todo modal
 $todoTitle.onclick = () => {
   $mainTodos.classList.toggle('hidden');
-};
-
-const saveTodo = content => {
-  const obj = { text: content, id: todolistArr.length + 1 };
-  todolistArr.push(obj);
-  localStorage.setItem(TDL, JSON.stringify(todolistArr));
 };
 
 const loadTodoList = () => {
@@ -96,7 +87,8 @@ const loadTodoList = () => {
     for (let content of parseList) {
       console.log(content, 'content');
       const { text } = content;
-      newTodo(text);
+      $addTodo(text);
+      // newTodo(text);
       saveTodo(text);
     }
   }
@@ -107,7 +99,8 @@ const init = () => {
   nowWeather();
   searchEngineWrap();
   loadTodoList();
-  newTodo();
+  // newTodo();
+  // $addTodo();
   saying();
   img();
   setInterval(() => {
