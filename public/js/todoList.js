@@ -63,7 +63,6 @@ $add.onclick = () => {
 };
 $todos.onclick = e => {
   if (!e.target.matches('.todos>li>div>button')) return;
-  console.log(e.target.parentNode.parentNode, 'e.target.value');
   const arr = e.target.parentNode.parentNode.id;
   console.log(arr, 'remove의 arr'); // 숫자임.
 
@@ -73,30 +72,67 @@ $todos.onclick = e => {
   // const modifyBtn = document.querySelector('.modify');
 
   const isContainsClass = eItem.classList.contains('edit_mode');
+  const loadedList = localStorage.getItem(TDL);
+  console.log(loadedList, 'loadedList getItem');
+  const parseList = JSON.parse(loadedList);
+  const filtering = parseList.filter(t => t.id === Number(arr));
+  const filterId = Number(filtering[0].id) - 1;
+  console.log(typeof filterId, 'filterID!!아이디');
+  console.log(parseList, 'parseList!!!!');
+  console.log(parseList[1]);
+  const result44 = parseList.splice(1, 1, { text: 100 });
+  console.log(result44, 'result44');
+  console.log(parseList, 'aosij!!!');
   // 수정
   if (editInput) {
     if (isContainsClass) {
       editLabel.textContent = editInput.value;
+      parseList.splice(Number(filterId), 1, {
+        text: editLabel.innerText,
+        id: filterId + 1,
+      });
+
+      console.log(parseList, 'rere...todolistArr');
+      localStorage.setItem(TDL, JSON.stringify(parseList));
       // modifyBtn.textContent = '수정완료';
     } else {
+      console.log(111111111);
       editInput.value = editLabel.textContent;
       // modifyBtn.textContent = '수정하기';
     }
     eItem.classList.toggle('edit_mode');
-    const loadedList = localStorage.getItem(TDL);
-    console.log(loadedList, 'loadedList getItem');
-    if (loadedList !== null) {
-      console.log(66);
-      const parseList = JSON.parse(loadedList);
-      console.log(parseList, 'parseList');
-      console.log(arr, 'arr');
-      const filtering = parseList.filter(t => t.id === Number(arr));
-      const filterId = filtering[0].id;
-      console.log(filterId, '이거뭔데');
-      // console.log(findItem, 'aoiaoisso');
-    }
+    // const loadedList = localStorage.getItem(TDL);
+    // console.log(loadedList, 'loadedList getItem');
+    // if (loadedList !== null) {
+    // console.log(66);
+    // const parseList = JSON.parse(loadedList);
+    // const rere = parseList;
+    // console.log(parseList, 'parseList');
+    // console.log(arr, 'arr');
+    // const filtering = parseList.filter(t => t.id === Number(arr));
+    // const filterId = filtering[0].id;
 
-    // console.log(todolistArr, '수정때 arr뭐잇냐');
+    // console.log(rere, 'rere~~');
+    // rere.splice(Number(filterId), 1, {
+    //   text: editLabel.innerText,
+    //   id: filtering[0].id,
+    // });
+
+    // console.log(rere, 'rere...todolistArr');
+    // localStorage.setItem(TDL, JSON.stringify(parseList));
+    // console.log(modifyValue, 'woiqritnf');
+    // localStorage.setItem(TDL, JSON.stringify(modifyValue));
+    // const rere = todolistArr.splice(t => console.log(t, 't의log'));
+    // const rere = todolistArr;
+    // console.log(rere, 'rereList');
+    // console.log(rere.splice(1), 'rere');
+    // console.log(rere, 'rereSplice후');
+    // console.log(
+    //   parseList.splice(filterId, 1, { text: editLabel.innerText, id: filterId }),
+    //   'rere'
+    // );
+    // localStorage.setItem(filterId.text(editLabel.value))
+    // }
   }
 
   // 삭제
