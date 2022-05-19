@@ -69,6 +69,9 @@ button {
   padding-right: 5px;
   color: #fff;
 }
+#city_name1 {
+  width: 104%;
+}
 .c_temp,
 .c_temp1 {
   font-size: 30px;
