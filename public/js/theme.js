@@ -11,10 +11,9 @@ import { saying } from './goodSaying.js';
 import { img } from './backgorundImage.js';
 
 // 현재시간 JS
-import { nowTime } from './nowTime.js';
+import { nowTime, analogTime, digital12Time } from './nowTime.js';
 
 // 시간대별 인사말 옆, 사용자이름 지정crud
-// import { loadUserNameWrap } from './timeHiandUserName.js';
 import { loadUserName } from './timeHiandUserName.js';
 const $userSet = document.querySelector('.user_set');
 const $userNameInput = document.querySelector('.user_name_input');
@@ -92,7 +91,9 @@ const loadTodoList = () => {
       saveTodo(text);
     }
   }
-  nowTime();
+  // nowTime();
+  // analogTime();
+  digital12Time();
 };
 
 const init = () => {
@@ -104,7 +105,9 @@ const init = () => {
   saying();
   img();
   setInterval(() => {
-    nowTime();
+    // nowTime();
+    // analogTime();
+    digital12Time();
   }, 1000);
   loadUserName();
   loadFocusTodayTodo();
