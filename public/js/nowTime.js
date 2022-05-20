@@ -1,9 +1,14 @@
 // 현재시간 JS
-export const nowTime = () => {
-  const $nowClick = document.querySelector('.now_clock');
+// export const nowTime = () => {
+export const digital24Time = () => {
+  const $digital24Clock = document.querySelector('.digital24_clock');
+  $digital24Clock.classList.add('active');
+  // const $div = document.createElement('div');
+  // $div.classList.add('digital24_clock');
+
   const $timeSet = document.querySelector('.time_set');
   const HHMM = new Date().toTimeString().slice(0, 5);
-  $nowClick.textContent = HHMM;
+  $digital24Clock.textContent = HHMM;
 
   const hhh = Number(HHMM.slice(0, 2));
 
@@ -18,8 +23,13 @@ export const nowTime = () => {
   }
 };
 export const digital12Time = () => {
-  const $nowClick = document.querySelector('.now_clock');
-  const $timeSet = document.querySelector('.time_set');
+  const $digital24Clock = document.querySelector('.digital24_clock');
+  // const $digita12Clock = document.querySelector('.digital12_clock');
+  // const $timeSet = document.querySelector('.time_set');
+
+  const $digita12Clock = document.createElement('div');
+  // $digita12Clock.classList.add('digital12_clock', 'hiddenClock');
+  $digita12Clock.classList.add('digital12_clock');
 
   const date = new Date();
   let hour = date.getHours(); // 0 - 23
@@ -42,13 +52,27 @@ export const digital12Time = () => {
 
   const time = hour + ':' + minute + ' ' + amOrpm;
   // const time = hour + ':' + minute + ':' + second + ' ' + amOrpm;
-  $nowClick.innerText = time;
-  $nowClick.textContent = time;
+  $digita12Clock.innerText = time;
+  $digita12Clock.textContent = time;
+
+  // $digital24Clock.replaceChildren($digita12Clock);
+
+  // replcechild
 };
+
 export const analogTime = () => {
-  const $hourDiv = document.querySelector('.hour_time');
-  const $minuteDiv = document.querySelector('.minute_time');
-  const $secondDiv = document.querySelector('.second_time');
+  const $digital24Clock = document.querySelector('.digital24_clock');
+  const $timeZone = document.querySelector('.time_zone');
+  const $hourDiv = document.createElement('div');
+  $hourDiv.classList.add('analogT', 'hour_time');
+  const $minuteDiv = document.createElement('div');
+  $minuteDiv.classList.add('analogT', 'minute_time');
+  const $secondDiv = document.createElement('div');
+  $secondDiv.classList.add('analogT', 'second_time');
+
+  const $divWrap = document.createElement('div');
+  // $divWrap.classList.add('analog_clock_wrap', 'hiddenClock');
+  $divWrap.classList.add('analog_clock_wrap');
 
   const now = new Date();
 
@@ -63,4 +87,17 @@ export const analogTime = () => {
   const hour = now.getHours();
   const hourDegrees = (hour / 12) * 360 + (mins / 60) * 30 + 90;
   $hourDiv.style.transform = `rotate(${hourDegrees}deg)`;
+
+  $divWrap.appendChild($hourDiv);
+  $divWrap.appendChild($minuteDiv);
+  $divWrap.appendChild($secondDiv);
+
+  // $timeZone.appendChild($divWrap);
+  // $digital24Clock.replaceChildren($divWrap);
 };
+
+setInterval(() => {
+  digital24Time();
+  analogTime();
+  digital12Time();
+}, 1000);

@@ -152,8 +152,28 @@ button {
   border: 1px solid #000;
   border-radius: 5px;
 }
-/* 현재시간 */
-.now_clock {
+.clock_button_wrap {
+  border: 1px solid red;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.clock_button_wrap > .time {
+  padding: 10px 10px;
+  margin: 0 5px;
+}
+/* 현재시간24, 12 */
+.digital24_clock {
+  /* display: none; */
+  /* border: 1px solid #000; */
+  font-size: 1050%;
+  display: flex;
+  background-color: rgba(0, 0, 0, 0.3);
+  justify-content: center;
+  color: #fff;
+}
+.digital12_clock {
+  /* display: none; */
   /* border: 1px solid #000; */
   font-size: 1050%;
   display: flex;
@@ -163,11 +183,12 @@ button {
 }
 /* 현재시간 아날로그시간 analog */
 .analog_clock_wrap {
+  /* display: none; */
   width: 130px;
   height: 130px;
   position: relative;
   padding: 2rem;
-  border: 5px solid #282828;
+  border: 5px solid #a39f9f;
   border-radius: 50%;
   margin: 15px auto;
 }
@@ -193,6 +214,12 @@ button {
   background: #ee791a;
   width: 45px;
   height: 2px;
+}
+.active {
+  display: block;
+}
+.hiddenClock {
+  display: none;
 }
 /* 시간대별 인사 */
 .greeting_time_user {
