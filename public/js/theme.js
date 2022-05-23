@@ -93,51 +93,48 @@ const loadTodoList = () => {
   }
 };
 const clockChange = () => {
-  // clock_button_wrap
-  const $clockButtonWrap = document.querySelector('.clock_button_wrap');
   // const activeClass = document.querySelector('.active');
   const $digital24Clock = document.querySelector('.digital24_clock');
   const $digital12Clock = document.querySelector('.digital12_clock');
   const $analogClock = document.querySelector('.analog_clock');
-  $clockButtonWrap.onclick = e => {
-    if (!e.target.matches('.clock_button_wrap>button')) return;
-    // const showClock = e.target.parentElement.nextElementSibling;
-    // console.log(showClock, '2093');
-    // // document.querySelector('.active').classList.remove('hiddneClock');
-    // activeClass.classList.remove('active');
-    // activeClass.classList.add('active');
-    // // digital24Time();
-    // // analogTime();
-    // // digital12Time();
-    // console.log(e.target.innerText, '92if');
-    if (e.target.innerText === '12ver') {
-      console.log('12버전 시계');
+  const $chageClockBtn = document.querySelector('.change_clock_bnt');
+  let clickPoint = 0;
+
+  $digital24Clock.classList.remove('hiddenClock');
+  $analogClock.classList.remove('hiddenClock');
+
+  $digital12Clock.classList.add('hiddenClock');
+  $analogClock.classList.add('hiddenClock');
+
+  $chageClockBtn.onclick = e => {
+    if (!e.target.matches('button')) return;
+    let clickDivide = clickPoint % 3; // 0 1 2
+
+    if (clickDivide === 0) {
+      console.log('1번클릭'); // 12버전
       $digital12Clock.classList.remove('hiddenClock');
       $analogClock.classList.remove('hiddenClock');
 
       $digital24Clock.classList.add('hiddenClock');
       $analogClock.classList.add('hiddenClock');
-      //
-    } else if (e.target.innerText === '24ver') {
-      console.log('24버전 시계');
+    } else if (clickDivide === 2) {
+      console.log('2번클릭'); // 24버전
       $digital24Clock.classList.remove('hiddenClock');
       $analogClock.classList.remove('hiddenClock');
 
       $digital12Clock.classList.add('hiddenClock');
       $analogClock.classList.add('hiddenClock');
-      //
-    } else if (e.target.innerText === 'analog') {
-      console.log('analog버전 시계');
+    } else if (clickDivide === 1) {
+      console.log('3번클릭'); // 아날로그버전
       $digital24Clock.classList.remove('hiddenClock');
       $analogClock.classList.remove('hiddenClock');
 
       $digital12Clock.classList.add('hiddenClock');
       $digital24Clock.classList.add('hiddenClock');
-
-      //
     } else {
-      console.log(error, '시간에러');
+      console.log('시간 클릭 에러');
     }
+    clickPoint++;
   };
 };
 

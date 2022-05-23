@@ -183,6 +183,7 @@ a {
   border: 1px solid #000;
   border-radius: 5px;
 }
+/* 현재시간24, 12 */
 .clock_button_wrap {
   border: 1px solid red;
   display: flex;
@@ -193,7 +194,20 @@ a {
   padding: 10px 10px;
   margin: 0 5px;
 }
-/* 현재시간24, 12 */
+.clock_wrap {
+  position: relative;
+}
+.change_clock_bnt {
+  position: absolute;
+  top: -20px;
+  left: 50%;
+  padding: 10px 14px;
+  font-size: 20px;
+  font-weight: bold;
+  border: none;
+  border-radius: 50%;
+  background-color: #fff;
+}
 .digital24_clock {
   /* display: none; */
   /* border: 1px solid #000; */

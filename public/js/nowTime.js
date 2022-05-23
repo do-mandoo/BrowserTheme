@@ -3,10 +3,6 @@
 export const digital24Time = () => {
   const $digital24Clock = document.querySelector('.digital24_clock');
 
-  const $timeZone = document.querySelector('.time_zone');
-  // const $div = document.createElement('div');
-  // $div.classList.add('digital24_clock');
-
   const $timeSaySet = document.querySelector('.time_say_set');
   const HHMM = new Date().toTimeString().slice(0, 5);
   $digital24Clock.textContent = HHMM;
@@ -24,13 +20,10 @@ export const digital24Time = () => {
   }
 };
 export const digital12Time = () => {
-  // const $digital24Clock = document.querySelector('.digital24_clock');
   const $digita12Clock = document.querySelector('.digital12_clock');
-  // const $timeSet = document.querySelector('.time_set');
   const $timeZone = document.querySelector('.time_zone');
 
   const $digita12 = document.createElement('div');
-  // $digita12Clock.classList.add('digital12_clock', 'hiddenClock');
   $digita12Clock.classList.add('digital12_clock');
 
   const date = new Date();
@@ -63,8 +56,6 @@ export const digital12Time = () => {
 };
 
 export const analogTime = () => {
-  // const $digital24Clock = document.querySelector('.digital24_clock');
-  const $timeZone = document.querySelector('.time_zone');
   const $analogClock = document.querySelector('.analog_clock');
 
   const $hourDiv = document.createElement('div');
@@ -97,9 +88,6 @@ export const analogTime = () => {
   $divWrap.appendChild($secondDiv);
 
   $analogClock.replaceChildren($divWrap);
-
-  // $timeZone.replaceChildren($divWrap);
-  // $digital24Clock.replaceChildren($divWrap);
 };
 
 setInterval(() => {
