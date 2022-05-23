@@ -2,11 +2,12 @@
 // export const nowTime = () => {
 export const digital24Time = () => {
   const $digital24Clock = document.querySelector('.digital24_clock');
-  $digital24Clock.classList.add('active');
+  // $digital24Clock.classList.add('active');
+  const $timeZone = document.querySelector('.time_zone');
   // const $div = document.createElement('div');
   // $div.classList.add('digital24_clock');
 
-  const $timeSet = document.querySelector('.time_set');
+  const $timeSaySet = document.querySelector('.time_say_set');
   const HHMM = new Date().toTimeString().slice(0, 5);
   $digital24Clock.textContent = HHMM;
 
@@ -14,20 +15,21 @@ export const digital24Time = () => {
 
   if (20 < hhh && hhh < 24) {
     //pm8~am3
-    $timeSet.textContent = 'good evening,';
+    $timeSaySet.textContent = 'good evening,';
   } else if (11 < hhh && hhh < 19) {
     //am12~20
-    $timeSet.textContent = 'good afternoon,';
+    $timeSaySet.textContent = 'good afternoon,';
   } else {
-    $timeSet.textContent = 'good morning,';
+    $timeSaySet.textContent = 'good morning,';
   }
 };
 export const digital12Time = () => {
-  const $digital24Clock = document.querySelector('.digital24_clock');
-  // const $digita12Clock = document.querySelector('.digital12_clock');
+  // const $digital24Clock = document.querySelector('.digital24_clock');
+  const $digita12Clock = document.querySelector('.digital12_clock');
   // const $timeSet = document.querySelector('.time_set');
+  const $timeZone = document.querySelector('.time_zone');
 
-  const $digita12Clock = document.createElement('div');
+  const $digita12 = document.createElement('div');
   // $digita12Clock.classList.add('digital12_clock', 'hiddenClock');
   $digita12Clock.classList.add('digital12_clock');
 
@@ -52,17 +54,19 @@ export const digital12Time = () => {
 
   const time = hour + ':' + minute + ' ' + amOrpm;
   // const time = hour + ':' + minute + ':' + second + ' ' + amOrpm;
-  $digita12Clock.innerText = time;
-  $digita12Clock.textContent = time;
+  $digita12.innerText = time;
+  $digita12.textContent = time;
 
-  // $digital24Clock.replaceChildren($digita12Clock);
+  $digita12Clock.replaceChildren($digita12);
 
   // replcechild
 };
 
 export const analogTime = () => {
-  const $digital24Clock = document.querySelector('.digital24_clock');
+  // const $digital24Clock = document.querySelector('.digital24_clock');
   const $timeZone = document.querySelector('.time_zone');
+  const $analogClock = document.querySelector('.analog_clock');
+
   const $hourDiv = document.createElement('div');
   $hourDiv.classList.add('analogT', 'hour_time');
   const $minuteDiv = document.createElement('div');
@@ -92,7 +96,9 @@ export const analogTime = () => {
   $divWrap.appendChild($minuteDiv);
   $divWrap.appendChild($secondDiv);
 
-  // $timeZone.appendChild($divWrap);
+  $analogClock.replaceChildren($divWrap);
+
+  // $timeZone.replaceChildren($divWrap);
   // $digital24Clock.replaceChildren($divWrap);
 };
 

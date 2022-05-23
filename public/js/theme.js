@@ -91,18 +91,18 @@ const loadTodoList = () => {
       saveTodo(text);
     }
   }
-  digital12Time();
-  digital24Time();
-  analogTime();
 };
-const weatherChange = () => {
+const clockChange = () => {
   // clock_button_wrap
   const $clockButtonWrap = document.querySelector('.clock_button_wrap');
   // const activeClass = document.querySelector('.active');
   const $digital24Clock = document.querySelector('.digital24_clock');
   const $digital12Clock = document.querySelector('.digital12_clock');
   const $analogClockWrap = document.querySelector('.analog_clock_wrap');
-  $clockButtonWrap.onclick = e => {
+  // digital24Time();
+  // analogTime();
+  // digital12Time();
+  /*  $clockButtonWrap.onclick = e => {
     if (!e.target.matches('.clock_button_wrap>button')) return;
     // const showClock = e.target.parentElement.nextElementSibling;
     // console.log(showClock, '2093');
@@ -115,32 +115,42 @@ const weatherChange = () => {
     // console.log(e.target.innerText, '92if');
     if (e.target.innerText === '12ver') {
       console.log('232342424');
-      // $digital12Clock.classList.add('active');
-      // $digital24Clock.classList.add('hiddenClock');
-      // $analogClockWrap.classList.add('hiddenClock');
+      digital12Time();
     } else if (e.target.innerText === '24ver') {
       console.log('2424');
       $digital12Clock.classList.add('hiddenClock');
       $digital24Clock.classList.remove('hiddenClock');
       $analogClockWrap.classList.add('hiddenClock');
+      digital24Time();
     } else if (e.target.innerText === 'analog') {
       console.log('analog!');
+      analogTime();
       // $digital12Clock.classList.add('active');
       // $digital24Clock.classList.add('hiddenClock');
       // $analogClockWrap.classList.add('hiddenClock');
+    } else {
+      console.log(error, '시간에러');
     }
-  };
+  }; */
 };
+// const $leftPage = document.querySelector('.left_page_btn');
+// const $rightPage = document.querySelector('.right_page_btn');
+// $leftPage.onclick = () => {
+//   // window.location()
+// };
 
 const init = () => {
   nowWeather();
   searchEngineWrap();
   loadTodoList();
-  weatherChange();
+  clockChange();
   // newTodo();
   // $addTodo();
   saying();
   img();
+  digital24Time();
+  analogTime();
+  digital12Time();
   // setInterval(() => {
   // digital24Time();
   // analogTime();
