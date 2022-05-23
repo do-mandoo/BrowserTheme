@@ -2,7 +2,7 @@
 // export const nowTime = () => {
 export const digital24Time = () => {
   const $digital24Clock = document.querySelector('.digital24_clock');
-  // $digital24Clock.classList.add('active');
+
   const $timeZone = document.querySelector('.time_zone');
   // const $div = document.createElement('div');
   // $div.classList.add('digital24_clock');

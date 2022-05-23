@@ -84,7 +84,7 @@ const loadTodoList = () => {
     const parseList = JSON.parse(loadedList);
     console.log(parseList, 'parseList');
     for (let content of parseList) {
-      console.log(content, 'content');
+      // console.log(content, 'content');
       const { text } = content;
       $addTodo(text);
       // newTodo(text);
@@ -98,11 +98,8 @@ const clockChange = () => {
   // const activeClass = document.querySelector('.active');
   const $digital24Clock = document.querySelector('.digital24_clock');
   const $digital12Clock = document.querySelector('.digital12_clock');
-  const $analogClockWrap = document.querySelector('.analog_clock_wrap');
-  // digital24Time();
-  // analogTime();
-  // digital12Time();
-  /*  $clockButtonWrap.onclick = e => {
+  const $analogClock = document.querySelector('.analog_clock');
+  $clockButtonWrap.onclick = e => {
     if (!e.target.matches('.clock_button_wrap>button')) return;
     // const showClock = e.target.parentElement.nextElementSibling;
     // console.log(showClock, '2093');
@@ -114,30 +111,35 @@ const clockChange = () => {
     // // digital12Time();
     // console.log(e.target.innerText, '92if');
     if (e.target.innerText === '12ver') {
-      console.log('232342424');
-      digital12Time();
+      console.log('12버전 시계');
+      $digital12Clock.classList.remove('hiddenClock');
+      $analogClock.classList.remove('hiddenClock');
+
+      $digital24Clock.classList.add('hiddenClock');
+      $analogClock.classList.add('hiddenClock');
+      //
     } else if (e.target.innerText === '24ver') {
-      console.log('2424');
-      $digital12Clock.classList.add('hiddenClock');
+      console.log('24버전 시계');
       $digital24Clock.classList.remove('hiddenClock');
-      $analogClockWrap.classList.add('hiddenClock');
-      digital24Time();
+      $analogClock.classList.remove('hiddenClock');
+
+      $digital12Clock.classList.add('hiddenClock');
+      $analogClock.classList.add('hiddenClock');
+      //
     } else if (e.target.innerText === 'analog') {
-      console.log('analog!');
-      analogTime();
-      // $digital12Clock.classList.add('active');
-      // $digital24Clock.classList.add('hiddenClock');
-      // $analogClockWrap.classList.add('hiddenClock');
+      console.log('analog버전 시계');
+      $digital24Clock.classList.remove('hiddenClock');
+      $analogClock.classList.remove('hiddenClock');
+
+      $digital12Clock.classList.add('hiddenClock');
+      $digital24Clock.classList.add('hiddenClock');
+
+      //
     } else {
       console.log(error, '시간에러');
     }
-  }; */
+  };
 };
-// const $leftPage = document.querySelector('.left_page_btn');
-// const $rightPage = document.querySelector('.right_page_btn');
-// $leftPage.onclick = () => {
-//   // window.location()
-// };
 
 const init = () => {
   nowWeather();

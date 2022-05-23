@@ -213,6 +213,13 @@ a {
   color: #fff;
 }
 /* 현재시간 아날로그시간 analog */
+.analog_clock {
+  height: 224px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: rgba(0, 0, 0, 0.3);
+}
 .analog_clock_wrap {
   /* display: none; */
   width: 130px;
