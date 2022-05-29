@@ -1,0 +1,24 @@
+{
+  "music":[
+    {
+      "cozy":[
+        {"id":1,"src":"고향의_봄(조은님_편곡)"},
+        {"id":3,"src":"수현_봄처녀"},
+        {"id":2,"src":"세미_바람"},
+        {"id":4,"src":"난파_구름(편곡_정동률)"}
+      ],
+      "happy":[
+        {"id":1,"src":"Colors_Of_Life"},
+        {"id":2,"src":"HOW_ARE_YOU"},
+        {"id":3,"src":"Morning_Kiss"},
+        {"id":4,"src":"Walking"}
+      ],
+      "chill":[
+        {"id":1,"src":"설화"},
+        {"id":2,"src":"City_Key"},
+        {"id":3,"src":"Fly_With_Me"},
+        {"id":4,"src":"Green_Apple"}
+      ]
+    }
+  ]
+}
