@@ -11,10 +11,9 @@ import { saying } from './goodSaying.js';
 import { img } from './backgorundImage.js';
 
 // 현재시간 JS
-import { nowTime } from './nowTime.js';
+import { digital24Time, analogTime, digital12Time } from './nowTime.js';
 
 // 시간대별 인사말 옆, 사용자이름 지정crud
-// import { loadUserNameWrap } from './timeHiandUserName.js';
 import { loadUserName } from './timeHiandUserName.js';
 const $userSet = document.querySelector('.user_set');
 const $userNameInput = document.querySelector('.user_name_input');
@@ -52,38 +51,29 @@ $focusTodayInput.onkeypress = e => {
 };
 
 // TODO오늘 할 일 JS
-import { newTodo } from './todoList.js';
+import { $addTodo, saveTodo } from './todoList.js';
 
 const $inputTodo = document.querySelector('.input_todo');
-const $add = document.querySelector('.add_todo');
-const $todos = document.querySelector('.todos');
-const $button = document.querySelector('button');
+// const $button = document.querySelector('button');
 const $todoTitle = document.querySelector('.todo_title');
 const $mainTodos = document.querySelector('.main_todos');
 
 const TDL = 'tdlist';
-let todolistArr = [];
+// let todolistArr = [];
 
 $inputTodo.onkeypress = e => {
   if (e.key !== 'Enter' || !$inputTodo.value) return;
 
   $addTodo($inputTodo.value);
-  console.log(1);
+  // newTodo($inputTodo.value);
   saveTodo($inputTodo.value);
 
-  console.log(2);
   $inputTodo.value = '';
 };
 
 // todo modal
 $todoTitle.onclick = () => {
   $mainTodos.classList.toggle('hidden');
-};
-
-const saveTodo = content => {
-  const obj = { text: content, id: todolistArr.length + 1 };
-  todolistArr.push(obj);
-  localStorage.setItem(TDL, JSON.stringify(todolistArr));
 };
 
 const loadTodoList = () => {
@@ -94,25 +84,77 @@ const loadTodoList = () => {
     const parseList = JSON.parse(loadedList);
     console.log(parseList, 'parseList');
     for (let content of parseList) {
-      console.log(content, 'content');
+      // console.log(content, 'content');
       const { text } = content;
-      newTodo(text);
+      $addTodo(text);
+      // newTodo(text);
       saveTodo(text);
     }
   }
-  nowTime();
+};
+const clockChange = () => {
+  // const activeClass = document.querySelector('.active');
+  const $digital24Clock = document.querySelector('.digital24_clock');
+  const $digital12Clock = document.querySelector('.digital12_clock');
+  const $analogClock = document.querySelector('.analog_clock');
+  const $chageClockBtn = document.querySelector('.change_clock_bnt');
+  let clickPoint = 0;
+
+  $digital24Clock.classList.remove('hiddenClock');
+  $analogClock.classList.remove('hiddenClock');
+
+  $digital12Clock.classList.add('hiddenClock');
+  $analogClock.classList.add('hiddenClock');
+
+  $chageClockBtn.onclick = e => {
+    if (!e.target.matches('button')) return;
+    let clickDivide = clickPoint % 3; // 0 1 2
+
+    if (clickDivide === 0) {
+      console.log('1번클릭'); // 12버전
+      $digital12Clock.classList.remove('hiddenClock');
+      $analogClock.classList.remove('hiddenClock');
+
+      $digital24Clock.classList.add('hiddenClock');
+      $analogClock.classList.add('hiddenClock');
+    } else if (clickDivide === 2) {
+      console.log('2번클릭'); // 24버전
+      $digital24Clock.classList.remove('hiddenClock');
+      $analogClock.classList.remove('hiddenClock');
+
+      $digital12Clock.classList.add('hiddenClock');
+      $analogClock.classList.add('hiddenClock');
+    } else if (clickDivide === 1) {
+      console.log('3번클릭'); // 아날로그버전
+      $digital24Clock.classList.remove('hiddenClock');
+      $analogClock.classList.remove('hiddenClock');
+
+      $digital12Clock.classList.add('hiddenClock');
+      $digital24Clock.classList.add('hiddenClock');
+    } else {
+      console.log('시간 클릭 에러');
+    }
+    clickPoint++;
+  };
 };
 
 const init = () => {
   nowWeather();
   searchEngineWrap();
   loadTodoList();
-  newTodo();
+  clockChange();
+  // newTodo();
+  // $addTodo();
   saying();
   img();
-  setInterval(() => {
-    nowTime();
-  }, 1000);
+  digital24Time();
+  analogTime();
+  digital12Time();
+  // setInterval(() => {
+  // digital24Time();
+  // analogTime();
+  // digital12Time();
+  // }, 1000);
   loadUserName();
   loadFocusTodayTodo();
   // searchEngine();
