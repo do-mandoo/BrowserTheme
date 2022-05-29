@@ -11,10 +11,9 @@ import { saying } from './goodSaying.js';
 import { img } from './backgorundImage.js';
 
 // 현재시간 JS
-import { nowTime } from './nowTime.js';
+import { digital24Time, analogTime, digital12Time } from './nowTime.js';
 
 // 시간대별 인사말 옆, 사용자이름 지정crud
-// import { loadUserNameWrap } from './timeHiandUserName.js';
 import { loadUserName } from './timeHiandUserName.js';
 const $userSet = document.querySelector('.user_set');
 const $userNameInput = document.querySelector('.user_name_input');
@@ -52,38 +51,29 @@ $focusTodayInput.onkeypress = e => {
 };
 
 // TODO오늘 할 일 JS
-import { newTodo } from './todoList.js';
+import { $addTodo, saveTodo } from './todoList.js';
 
 const $inputTodo = document.querySelector('.input_todo');
-const $add = document.querySelector('.add_todo');
-const $todos = document.querySelector('.todos');
-const $button = document.querySelector('button');
+// const $button = document.querySelector('button');
 const $todoTitle = document.querySelector('.todo_title');
 const $mainTodos = document.querySelector('.main_todos');
 
 const TDL = 'tdlist';
-let todolistArr = [];
+// let todolistArr = [];
 
 $inputTodo.onkeypress = e => {
   if (e.key !== 'Enter' || !$inputTodo.value) return;
 
   $addTodo($inputTodo.value);
-  console.log(1);
+  // newTodo($inputTodo.value);
   saveTodo($inputTodo.value);
 
-  console.log(2);
   $inputTodo.value = '';
 };
 
 // todo modal
 $todoTitle.onclick = () => {
   $mainTodos.classList.toggle('hidden');
-};
-
-const saveTodo = content => {
-  const obj = { text: content, id: todolistArr.length + 1 };
-  todolistArr.push(obj);
-  localStorage.setItem(TDL, JSON.stringify(todolistArr));
 };
 
 const loadTodoList = () => {
@@ -96,23 +86,66 @@ const loadTodoList = () => {
     for (let content of parseList) {
       console.log(content, 'content');
       const { text } = content;
-      newTodo(text);
+      $addTodo(text);
+      // newTodo(text);
       saveTodo(text);
     }
   }
-  nowTime();
+  digital12Time();
+  digital24Time();
+  analogTime();
+};
+const weatherChange = () => {
+  // clock_button_wrap
+  const $clockButtonWrap = document.querySelector('.clock_button_wrap');
+  // const activeClass = document.querySelector('.active');
+  const $digital24Clock = document.querySelector('.digital24_clock');
+  const $digital12Clock = document.querySelector('.digital12_clock');
+  const $analogClockWrap = document.querySelector('.analog_clock_wrap');
+  $clockButtonWrap.onclick = e => {
+    if (!e.target.matches('.clock_button_wrap>button')) return;
+    // const showClock = e.target.parentElement.nextElementSibling;
+    // console.log(showClock, '2093');
+    // // document.querySelector('.active').classList.remove('hiddneClock');
+    // activeClass.classList.remove('active');
+    // activeClass.classList.add('active');
+    // // digital24Time();
+    // // analogTime();
+    // // digital12Time();
+    // console.log(e.target.innerText, '92if');
+    if (e.target.innerText === '12ver') {
+      console.log('232342424');
+      // $digital12Clock.classList.add('active');
+      // $digital24Clock.classList.add('hiddenClock');
+      // $analogClockWrap.classList.add('hiddenClock');
+    } else if (e.target.innerText === '24ver') {
+      console.log('2424');
+      $digital12Clock.classList.add('hiddenClock');
+      $digital24Clock.classList.remove('hiddenClock');
+      $analogClockWrap.classList.add('hiddenClock');
+    } else if (e.target.innerText === 'analog') {
+      console.log('analog!');
+      // $digital12Clock.classList.add('active');
+      // $digital24Clock.classList.add('hiddenClock');
+      // $analogClockWrap.classList.add('hiddenClock');
+    }
+  };
 };
 
 const init = () => {
   nowWeather();
   searchEngineWrap();
   loadTodoList();
-  newTodo();
+  weatherChange();
+  // newTodo();
+  // $addTodo();
   saying();
   img();
-  setInterval(() => {
-    nowTime();
-  }, 1000);
+  // setInterval(() => {
+  // digital24Time();
+  // analogTime();
+  // digital12Time();
+  // }, 1000);
   loadUserName();
   loadFocusTodayTodo();
   // searchEngine();

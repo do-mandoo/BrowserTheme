@@ -14,7 +14,7 @@
   ></script>
   <script>
     // jQuery, ajax 부분.
-    const weather_api_key = '026ab543b433f9fb5be49ecf54e39b91';
+    /* const weather_api_key = '026ab543b433f9fb5be49ecf54e39b91';
     const city_name = 'Seoul';
     const k_temp = 273.15;
     $.getJSON(
@@ -33,7 +33,7 @@
         $('.weather_icon').html(w_icon);
         $('.city_name').append(result.name);
       }
-    );
+    ); */
     // const $famousSaying = document.querySelector('.famous_saying');
 
     // $get_json('../saying.json');
@@ -42,7 +42,7 @@
     <div class="container">
       <main class="main">
         <div class="main_top">
-          <div class="jquery_weather">
+          <div class="jquery_weather hidden">
             <div class="main_top_top">
               <span class="weather_icon"></span>
               <span class="c_temp"></span>
@@ -57,7 +57,12 @@
               <span class="c_temp1"></span>
             </div>
             <div class="main_top_bottom1">
-              <div class="city_name1"></div>
+              <!-- <div class="city_name1"></div> -->
+              <select name="city_name1" id="city_name1">
+                <option value="seoul">Seoul</option>
+                <option value="sydney">Sydney</option>
+                <option value="canada">Canada</option>
+              </select>
             </div>
           </div>
         </div>
@@ -81,7 +86,18 @@
           </div>
         </div>
         <div class="time_zone">
-          <div class="now_clock"></div>
+          <div class="clock_button_wrap">
+            <button class="time 12ver">12ver</button>
+            <button class="time 24ver">24ver</button>
+            <button class="time analogver">analog</button>
+          </div>
+          <div class="digital24_clock"></div>
+          <!-- <div class="digital12_clock"></div>
+          <div class="analog_clock_wrap">
+            <div class="analogT hour_time"></div>
+            <div class="analogT minute_time"></div>
+            <div class="analogT second_time"></div>
+          </div> -->
           <div class="greeting_time_user">
             <span class="ts time_set"></span>
             <span class="ts user_set">

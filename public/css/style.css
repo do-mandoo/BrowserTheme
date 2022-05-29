@@ -9,7 +9,7 @@ button {
 .container {
   /* background-image: url('../img/5.jpg'); */
   width: 100%;
-  min-height: 917px;
+  min-height: 937px;
   display: flex;
   justify-content: center;
 }
@@ -33,11 +33,11 @@ button {
   align-items: flex-end;
 }
 .jquery_weather {
-  border: 1px solid red;
+  background-color: rgba(255, 192, 203, 0.192);
   /* width: 100px; */
 }
 .json_weather {
-  border: 2px dashed blue;
+  background-color: rgba(135, 207, 235, 0.26);
   /* width: 100px; */
 }
 .main_top_top,
@@ -68,6 +68,9 @@ button {
 .main_top_bottom1 {
   padding-right: 5px;
   color: #fff;
+}
+#city_name1 {
+  width: 104%;
 }
 .c_temp,
 .c_temp1 {
@@ -149,8 +152,19 @@ button {
   border: 1px solid #000;
   border-radius: 5px;
 }
-/* 현재시간 */
-.now_clock {
+.clock_button_wrap {
+  border: 1px solid red;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.clock_button_wrap > .time {
+  padding: 10px 10px;
+  margin: 0 5px;
+}
+/* 현재시간24, 12 */
+.digital24_clock {
+  /* display: none; */
   /* border: 1px solid #000; */
   font-size: 1050%;
   display: flex;
@@ -158,6 +172,56 @@ button {
   justify-content: center;
   color: #fff;
 }
+.digital12_clock {
+  /* display: none; */
+  /* border: 1px solid #000; */
+  font-size: 1050%;
+  display: flex;
+  background-color: rgba(0, 0, 0, 0.3);
+  justify-content: center;
+  color: #fff;
+}
+/* 현재시간 아날로그시간 analog */
+.analog_clock_wrap {
+  /* display: none; */
+  width: 130px;
+  height: 130px;
+  position: relative;
+  padding: 2rem;
+  border: 5px solid #a39f9f;
+  border-radius: 50%;
+  margin: 15px auto;
+}
+.analogT {
+  width: 50px;
+  right: 50%;
+  height: 6px;
+  background: #61afff;
+  position: absolute;
+  top: 50%;
+  border-radius: 6px;
+  transform-origin: 100%;
+  transform: rotate(90deg);
+}
+.hour_time {
+  width: 30px;
+}
+.minute_time {
+  height: 3px;
+  width: 40px;
+}
+.second_time {
+  background: #ee791a;
+  width: 45px;
+  height: 2px;
+}
+.active {
+  display: block;
+}
+.hiddenClock {
+  display: none;
+}
+/* 시간대별 인사 */
 .greeting_time_user {
   display: flex;
   justify-content: center;
