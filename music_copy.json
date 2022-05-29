@@ -1,0 +1,24 @@
+{
+  "music":[
+    {
+      "cozy":[
+        {"id":1,"src":"..public/music/cozy/고향의_봄(조은님_편곡).mp3"},
+        {"id":3,"src":"..public/music/cozy/박수현_봄처녀.mp3"},
+        {"id":2,"src":"..public/music/cozy/최세미_바람.mp3"},
+        {"id":4,"src":"..public/music/cozy/홍난파_구름(편곡_정동률).mp3"}
+      ],
+      "happy":[
+        {"id":1,"src":"..public/music/happy/Colors_Of_Life.mp3"},
+        {"id":2,"src":"..public/music/happy/HOW_ARE_YOU.mp3"},
+        {"id":3,"src":"..public/music/happy/Morning_Kiss.mp3"},
+        {"id":4,"src":"..public/music/happy/Walking.mp3"}
+      ],
+      "chill":[
+        {"id":1,"src":"..public/music/chill/설화.mp3"},
+        {"id":2,"src":"..public/music/chill/City_Key.mp3"},
+        {"id":3,"src":"..public/music/chill/Fly_With_Me.mp3"},
+        {"id":4,"src":"..public/music/chill/Green_Apple.mp3"}
+      ]
+    }
+  ]
+}

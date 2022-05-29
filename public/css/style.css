@@ -3,8 +3,13 @@
   margin: 0;
   padding: 0;
 }
-button {
+button,
+a {
   cursor: pointer;
+}
+a {
+  margin: 0;
+  padding: 0;
 }
 .container {
   /* background-image: url('../img/5.jpg'); */
@@ -94,6 +99,32 @@ button {
   align-items: center;
   /* justify-content: center; */
 }
+.time_zone {
+  /* background-color: pink; */
+  position: relative;
+}
+.page_btn > a {
+  display: inline-block;
+  padding: 0px 10px;
+  font-weight: bold;
+  text-decoration: none;
+  border: 1px solid #000;
+  color: #000;
+  font-size: 40px;
+  text-align: center;
+  background-color: #fff;
+}
+.left_page_btn {
+  position: absolute;
+  left: 0;
+  top: 45%;
+  cursor: not-allowed;
+}
+.right_page_btn {
+  position: absolute;
+  right: 0;
+  top: 130px;
+}
 .searchEn {
   width: 90px;
   padding: 10px;
@@ -152,6 +183,7 @@ button {
   border: 1px solid #000;
   border-radius: 5px;
 }
+/* 현재시간24, 12 */
 .clock_button_wrap {
   border: 1px solid red;
   display: flex;
@@ -162,7 +194,20 @@ button {
   padding: 10px 10px;
   margin: 0 5px;
 }
-/* 현재시간24, 12 */
+.clock_wrap {
+  position: relative;
+}
+.change_clock_bnt {
+  position: absolute;
+  top: -20px;
+  left: 50%;
+  padding: 10px 14px;
+  font-size: 20px;
+  font-weight: bold;
+  border: none;
+  border-radius: 50%;
+  background-color: #fff;
+}
 .digital24_clock {
   /* display: none; */
   /* border: 1px solid #000; */
@@ -182,6 +227,13 @@ button {
   color: #fff;
 }
 /* 현재시간 아날로그시간 analog */
+.analog_clock {
+  height: 224px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: rgba(0, 0, 0, 0.3);
+}
 .analog_clock_wrap {
   /* display: none; */
   width: 130px;
