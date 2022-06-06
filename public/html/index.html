@@ -6,6 +6,23 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>toy- Browser Theme</title>
     <link rel="stylesheet" href="../css/style.css" />
+    <link rel="stylesheet" href="../css/style1.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inconsolata:wght@300;400;800&family=Roboto+Mono:wght@100;300;400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Do+Hyeon&family=Inconsolata:wght@300;400;800&family=Roboto+Mono:wght@100;300;400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.10.2/css/all.min.css"
+    />
   </head>
   <script
     src="https://code.jquery.com/jquery-3.6.0.min.js"
@@ -39,118 +56,182 @@
     // $get_json('../saying.json');
   </script>
   <body>
-    <div class="container">
-      <main class="main">
-        <div class="main_top">
-          <div class="jquery_weather hidden">
-            <div class="main_top_top">
-              <span class="weather_icon"></span>
-              <span class="c_temp"></span>
+    <div class="main_container">
+      <main class="main_main">
+        <article class="page first_page">
+          <div class="main_top">
+            <div class="jquery_weather hidden">
+              <div class="main_top_top">
+                <span class="weather_icon"></span>
+                <span class="c_temp"></span>
+              </div>
+              <div class="main_top_bottom">
+                <div class="city_name"></div>
+              </div>
             </div>
-            <div class="main_top_bottom">
-              <div class="city_name"></div>
+            <div class="json_weather">
+              <div class="main_top_top1">
+                <span class="weather_icon1"></span>
+                <span class="c_temp1"></span>
+              </div>
+              <div class="main_top_bottom1">
+                <!-- <div class="city_name1"></div> -->
+                <select name="city_name1" id="city_name1">
+                  <option value="seoul">Seoul</option>
+                  <option value="sydney">Sydney</option>
+                  <option value="canada">Canada</option>
+                </select>
+              </div>
             </div>
           </div>
-          <div class="json_weather">
-            <div class="main_top_top1">
-              <span class="weather_icon1"></span>
-              <span class="c_temp1"></span>
-            </div>
-            <div class="main_top_bottom1">
-              <!-- <div class="city_name1"></div> -->
-              <select name="city_name1" id="city_name1">
-                <option value="seoul">Seoul</option>
-                <option value="sydney">Sydney</option>
-                <option value="canada">Canada</option>
+          <div class="gap1">
+            <!-- <form class="search_form">
+              <select name="search_select" id="search_select">
+                <option value="google">GOOGLE</option>
+                <option value="naver">NAVER</option>
               </select>
-            </div>
-          </div>
-        </div>
-        <div class="gap1">
-          <!-- <form class="search_form">
-            <select name="search_select" id="search_select">
-              <option value="google">GOOGLE</option>
-              <option value="naver">NAVER</option>
-            </select>
-            <input
-              type="text"
-              class="search_word"
-              placeholder="검색어를 입력하세요."
-              autocomplete="off"
-            />
-            <button class="submit_btn" type="submit">검색</button>
-          </form> -->
-          <div>
-            <button class="searchEn google" value="google">GOOGLE</button>
-            <button class="searchEn naver" value="naver">NAVER</button>
-          </div>
-        </div>
-        <div class="time_zone">
-          <!-- <div class="clock_button_wrap">
-            <button class="time 12ver">12ver</button>
-            <button class="time 24ver">24ver</button>
-            <button class="time analogver">analog</button>
-          </div> -->
-          <div class="clock_wrap">
-            <div class="digital24_clock"></div>
-            <div class="digital12_clock"></div>
-            <div class="analog_clock"></div>
-            <!-- <div class="analogT hour_time"></div>
-              <div class="analogT minute_time"></div>
-              <div class="analogT second_time"></div> -->
-          </div>
-          <button class="change_clock_bnt">↺</button>
-          <div class="greeting_time_user">
-            <span class="ts time_say_set"></span>
-            <span class="ts user_set">
               <input
                 type="text"
-                class="ts user_name_input"
+                class="search_word"
+                placeholder="검색어를 입력하세요."
                 autocomplete="off"
-                placeholder="사용자 이름을 입력하세요."
               />
-              <!-- <div class="text_username"></div> -->
-            </span>
+              <button class="submit_btn" type="submit">검색</button>
+            </form> -->
+            <div>
+              <button class="searchEn google" value="google">GOOGLE</button>
+              <button class="searchEn naver" value="naver">NAVER</button>
+            </div>
           </div>
-          <div class="page_btn">
+          <div class="time_zone">
+            <!-- <div class="clock_button_wrap">
+              <button class="time 12ver">12ver</button>
+              <button class="time 24ver">24ver</button>
+              <button class="time analogver">analog</button>
+            </div> -->
+            <div class="clock_wrap">
+              <div class="digital24_clock"></div>
+              <div class="digital12_clock"></div>
+              <div class="analog_clock"></div>
+              <!-- <div class="analogT hour_time"></div>
+                <div class="analogT minute_time"></div>
+                <div class="analogT second_time"></div> -->
+            </div>
+            <button class="change_clock_bnt">↺</button>
+            <div class="greeting_time_user">
+              <span class="ts time_say_set"></span>
+              <span class="ts user_set">
+                <input
+                  type="text"
+                  class="ts user_name_input"
+                  autocomplete="off"
+                  placeholder="사용자 이름을 입력하세요."
+                />
+                <!-- <div class="text_username"></div> -->
+              </span>
+            </div>
+          </div>
+          <div class="gap2">
+            <div class="ts focus_today_wrap">
+              <div class="focus_today_title">What is your main focus for today?</div>
+              <div class="today_todo_set">
+                <input type="text" class="focus_today_input" autocomplete="off" />
+              </div>
+            </div>
+          </div>
+          <footer class="main_bottom">
+            <div class="who_made">JinSol(do-mandoo)</div>
+            <div class="famous_saying"></div>
+            <div class="todos_container">
+              <div class="main_todos hidden">
+                <!-- < action=""> submit이벤트 발생시키는 곳. -->
+                <div class="todos_list_area">
+                  <ul class="todos">
+                    <!-- <li>
+                    <label><input type="checkbox"><span>HTML</span></label>
+                    <button class="remove">X</button>
+                  </li> -->
+                  </ul>
+                </div>
+                <div class="input_area">
+                  <!-- form? -->
+                  <button class="add_todo">+</button>
+                  <input class="input_todo" type="text" placeholder="enter todo!" required />
+                </div>
+              </div>
+              <button class="todo_title">오늘 할 일 목록</button>
+            </div>
+          </footer>
+          <!-- <div class="page_btn">
             <a class="left_page_btn">&lt;</a>
             <a href="../html/index2.html" class="right_page_btn">&gt;</a>
-          </div>
-        </div>
-        <div class="gap2">
-          <div class="ts focus_today_wrap">
-            <div class="focus_today_title">What is your main focus for today?</div>
-            <div class="today_todo_set">
-              <input type="text" class="focus_today_input" autocomplete="off" />
-            </div>
-          </div>
-        </div>
-        <footer class="main_bottom">
-          <div class="who_made">JinSol(do-mandoo)</div>
-          <div class="famous_saying"></div>
+          </div> -->
+        </article>
+        <article class="page second_page">
+          <section class="main_left">
+            <h1>음악 재생</h1>
+            <div class="left_container">
+              <div class="music_wrap">
+                <div class="music_console">
+                  <div class="play_title_wrap">
+                    <p>♬노래 제목♬</p>
+                    <h4 class="playing_title">재생되고있는 노래제목</h4>
+                  </div>
 
-          <div class="todos_container">
-            <div class="main_todos hidden">
-              <!-- < action=""> submit이벤트 발생시키는 곳. -->
-              <div class="todos_list_area">
-                <ul class="todos">
-                  <!-- <li>
-                  <label><input type="checkbox"><span>HTML</span></label>
-                  <button class="remove">X</button>
-                </li> -->
-                </ul>
-              </div>
-              <div class="input_area">
-                <!-- form? -->
-                <button class="add_todo">+</button>
-                <input class="input_todo" type="text" placeholder="enter todo!" required />
+                  <!-- <div class="audio_wrap"></div> -->
+                  <audio src="../music/chill/Green_Apple.mp3" class="audio"></audio>
+                  <div class="navigation">
+                    <button class="navi_btn prev" class="action_btn">
+                      <i class="fas fa-backward"></i>
+                    </button>
+                    <button class="navi_btn play" class="action_btn action_btn_big">
+                      <i class="fas fa-play"></i>
+                    </button>
+                    <button class="navi_btn next" class="action_btn">
+                      <i class="fas fa-forward"></i>
+                    </button>
+                  </div>
+                </div>
+                <div class="music_list_wrap">
+                  <div class="music_item chill_mp3">chill</div>
+                  <div class="music_item happy_mp3">happy</div>
+                  <div class="music_item cozy_mp3">cozy</div>
+                </div>
               </div>
             </div>
-            <button class="todo_title">오늘 할 일 목록</button>
-          </div>
-        </footer>
+          </section>
+          <section class="main_right">
+            <h1>뽀모도로 타이머</h1>
+            <div class="right_container">
+              <div class="pomo pomodoro_timer">
+                <h3>뽀모도로</h3>
+                <div class="timer_number pomodoro_timer_number">25:00</div>
+                <div class="btn_wrap time_btn_wrap">
+                  <button class="time_btn reset_btn">RESET</button>
+                  <button class="time_btn start_btn">START</button>
+                  <button class="time_btn stop_btn">STOP</button>
+                </div>
+              </div>
+              <div class="pomo pomodoro_rest_timer">
+                <h3>쉬는시간</h3>
+                <div class="timer_number rest_timer_number">05:00</div>
+                <div class="btn_wrap res_btn_wrap">
+                  <button class="time_btn rest_reset_btn">RESET</button>
+                  <button class="time_btn rest_start_btn">START</button>
+                  <button class="time_btn rest_stop_btn">STOP</button>
+                </div>
+              </div>
+            </div>
+          </section>
+          <!-- <div class="page_btn">
+            <a href="../html/index.html" class="left_page_btn">&lt;</a>
+            <a class="right_page_btn">&gt;</a>
+          </div> -->
+        </article>
       </main>
     </div>
+    <script src="../js2/pageSlide.js"></script>
     <script type="module" src="../js/theme.js"></script>
+    <script src="../js2/app.js"></script>
   </body>
 </html>

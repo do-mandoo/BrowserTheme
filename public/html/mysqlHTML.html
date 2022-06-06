@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      document.addEventListener('DOMContentLoaded', async () => {
+        const fetchItems = async () => {
+          try {
+            const res = await fetch('http://localhost:3000/say');
+            cartItems = await res.json();
+            console.log(cartItems, '명언배열');
+          } catch (e) {
+            console.log(e, '명언배열에러놤');
+          }
+        };
+        await fetchItems();
+      });
+    </script>
+  </body>
+</html>
