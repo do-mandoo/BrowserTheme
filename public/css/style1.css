@@ -1,0 +1,290 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  /* font-family: 'Inconsolata', monospace; */
+  font-family: 'Do Hyeon', sans-serif;
+}
+button,
+a {
+  cursor: pointer;
+  margin: 0;
+  padding: 0;
+  font-family: 'Roboto Mono', monospace;
+}
+ul,
+li {
+  list-style: none;
+  font-family: 'Roboto Mono', monospace;
+}
+/* .main_container {
+  width: 100%;
+  min-height: 937px;
+}
+.main_main {
+  display: flex;
+  position: relative;
+} */
+/* .page_btn > a {
+  background-color: rgba(255, 255, 255, 0.233);
+  display: inline-block;
+  padding: 0px 13px 4px 13px;
+  font-weight: bold;
+  text-decoration: none;
+  color: rgba(0, 0, 0, 0.7);
+  font-size: 30px;
+  text-align: center;
+  border-radius: 30%;
+}
+.page_btn > a:hover {
+  background-color: #fff;
+  color: #000;
+} */
+article {
+  /* background-color: #fff; */
+}
+.left_page_btn {
+  position: absolute;
+  left: 15px;
+  top: 50%;
+}
+.right_page_btn {
+  position: absolute;
+  right: 15px;
+  top: 50%;
+  cursor: not-allowed;
+}
+section {
+  flex: 1;
+  min-height: 937px;
+}
+/* 메인 공통 */
+.main_left,
+.main_right {
+  display: flex;
+  flex-flow: column nowrap;
+  justify-content: center;
+  align-items: center;
+}
+.left_container,
+.right_container {
+  padding: 60px;
+  background-color: rgba(238, 238, 238, 0.301);
+  border-radius: 40px;
+  width: 600px;
+  height: 700px;
+  display: flex;
+  flex-flow: column nowrap;
+  text-align: center;
+}
+h1 {
+  text-shadow: -1px 0 #fff, 0 1px #fff, 1px 0 #fff, 0 -1px #fff;
+  font-size: 50px;
+}
+/* 메인 왼쪽 */
+.main_left {
+  background-image: url(../img/Flower.jpg);
+  /* background-size: contain; */
+}
+.music_wrap {
+  display: flex;
+  height: 100%;
+  flex-flow: column nowrap;
+  justify-content: space-between;
+}
+.music_console {
+  flex: 2;
+  /* background-color: #eee; */
+  display: flex;
+  flex-flow: column nowrap;
+  justify-content: space-around;
+}
+.music_console {
+  background: #dae2f8; /* fallback for old browsers */
+  background: -webkit-linear-gradient(to right, #d6a4a4, #dae2f8); /* Chrome 10-25, Safari 5.1-6 */
+  background: linear-gradient(
+    to right,
+    #d6a4a4,
+    #dae2f8
+  ); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+}
+
+.play_title_wrap {
+  /* background-color: #fff; */
+  display: flex;
+  flex-flow: column nowrap;
+  justify-content: center;
+  align-items: center;
+  /* flex: 1; */
+}
+.play_title_wrap > p {
+  font-size: 20px;
+  margin-bottom: 10px;
+}
+.playing_title {
+  font-size: 50px;
+  font-weight: 300;
+  /* font-family: 'Roboto Mono', monospace; */
+}
+.navigation {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  /* margin-top: 5px; */
+  /* flex: 1; */
+  /* background-color: #fff; */
+}
+.navi_btn {
+  padding: 40px;
+  margin-right: 20px;
+  border: none;
+}
+.navi_btn:hover {
+  color: tomato;
+}
+.fas {
+  font-size: 40px;
+}
+.next {
+  margin: 0;
+}
+.music_list_wrap {
+  flex: 1;
+  display: flex;
+  flex-flow: row nowrap;
+  justify-content: center;
+  margin-top: 30px;
+}
+.music_item {
+  display: flex;
+  flex-flow: column nowrap;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+  font-family: 'Roboto Mono', monospace;
+  text-align: center;
+}
+.chill_mp3,
+.happy_mp3,
+.cozy_mp3 {
+  flex: 1;
+}
+.chill_mp3 {
+  background: #6667ab;
+  /* fallback for old browsers */
+  /* background: -webkit-linear-gradient(to right, #6be585, #dd3e54);  */
+  /* Chrome 10-25, Safari 5.1-6 */
+  /* background: linear-gradient(
+    to right,
+    #6be585,
+    #dd3e54
+  );  */
+  /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+}
+.chill_mp3:hover {
+  background: #9d9ffd;
+  /*background: #ff8f9e;
+    background: linear-gradient(
+    to right,
+    #ec2f4b,
+    #009fff
+  ); */
+  /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+}
+.happy_mp3 {
+  background: #009fff; /* fallback for old browsers */
+  /* background: -webkit-linear-gradient(to right, #ec2f4b, #009fff);  */
+  /* Chrome 10-25, Safari 5.1-6 */
+  /* background: linear-gradient(
+    to right,
+    #ec2f4b,
+    #009fff
+  ); */
+  /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+}
+.happy_mp3:hover {
+  background: #97d2f7;
+}
+.cozy_mp3 {
+  background: #00ff66; /* fallback for old browsers */
+  /* background: -webkit-linear-gradient(
+    to right,
+    #f7797d,
+    #fbd786,
+    #c6ffdd
+  );  */
+  /* Chrome 10-25, Safari 5.1-6 */
+  /* background: linear-gradient(
+    to right,
+    #f7797d,
+    #fbd786,
+    #c6ffdd
+  );  */
+  /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+}
+.cozy_mp3:hover {
+  background: #b4ffd2;
+}
+/* 메인 오른쪽 */
+.main_right {
+  background-image: url(../img/Leaf.jpg);
+  background-size: cover;
+  display: flex;
+  flex-flow: column nowrap;
+  justify-content: center;
+  align-items: center;
+}
+h3 {
+  padding-top: 40px;
+  font-weight: 300;
+  font-size: 20px;
+}
+.pomodoro_timer {
+  background-color: #74caff;
+  flex: 1;
+}
+.pomodoro_rest_timer {
+  background-color: #ffc2c2;
+  flex: 1;
+  margin-top: 30px;
+}
+.pomo {
+  display: flex;
+  flex-flow: column nowrap;
+  justify-content: space-between;
+}
+.btn_wrap {
+  display: flex;
+  flex-flow: row nowrap;
+  justify-content: center;
+  align-items: center;
+  display: flex;
+}
+.timer_number {
+  font-size: 40px;
+}
+.time_btn {
+  flex: 1;
+  height: 60px;
+  border: none;
+}
+.time_btn {
+  cursor: pointer;
+  border: none;
+  margin: 20px 10px 10px;
+  padding: 0px 12px;
+  border-radius: 4px;
+  box-shadow: rgb(235 235 235) 0px 3px 0px;
+  font-size: 22px;
+  height: 55px;
+  font-weight: bold;
+  width: 200px;
+  background-color: white;
+}
+.time_btn:hover {
+  background-color: rgb(180, 250, 159);
+}
+.start_btn,
+.rest_start_btn {
+  color: #ff4961;
+}
