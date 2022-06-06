@@ -42,7 +42,7 @@ $resetBtn.onclick = () => {
   $pomodoroTimerNumber.textContent = '25:00';
   console.log('리셋!');
 };
-
+//
 // const startRestTimer = () => {
 //   console.log('startRest');
 //   var timeY = setInterval(function () {

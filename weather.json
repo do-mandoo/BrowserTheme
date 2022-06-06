@@ -1,4 +1,4 @@
-{
+{ 
   "weatherApiKey":"026ab543b433f9fb5be49ecf54e39b91",
   "weatherUrl":"https://api.openweathermap.org/data/2.5/weather?",
   "weatherImgUrl" : "http://openweathermap.org/img/w/"
