@@ -67,30 +67,33 @@ export const examplePomo = (time, $timeNum) => {
       $timeNum
     );
   };
+
+  // while 문 ==================================================================
   // while문 굳이 stop안누르면 두 개. 알고리즘적인. 무한루프. stop눌렀을때만 break.
 
   $timeBtnWrap.onclick = e => {
     if (!e.target.matches('.time_btn_wrap>button')) return;
     console.log(2039);
     console.log(e.target.textContent.toLowerCase() === 'start');
+    i = 0;
     while (i < 5) {
       console.log('되냐');
       // if ($startBtn.textContent.toLowerCase() === 'start') {
       console.log('di');
-      pomoStartTimer(pomodoroTimer, $pomodoroTimerNumber);
-      $startBtn.textContent = 'stop'.toUpperCase();
-      pomoSetTime = setTimeout(() => {
-        restStartTimer(pomodoroRestTimer, $restTimerNumber);
-        pomodoroTimer = 4;
-        $pomodoroTimerNumber.textContent = '25:00';
-        $startBtn.textContent = 'start'.toUpperCase();
-      }, (pomodoroTimer + 1) * 1000);
+      // pomoStartTimer(pomodoroTimer, $pomodoroTimerNumber);
+      // $startBtn.textContent = 'stop'.toUpperCase();
+      // pomoSetTime = setTimeout(() => {
+      //   restStartTimer(pomodoroRestTimer, $restTimerNumber);
+      //   pomodoroTimer = 4;
+      //   $pomodoroTimerNumber.textContent = '25:00';
+      //   $startBtn.textContent = 'start'.toUpperCase();
+      // }, (pomodoroTimer + 1) * 1000);
       // }
       console.log(i, 'i');
       if (i === 3) {
         console.log('브레이크');
-        clearInterval(pomodoroInterval);
-        clearTimeout(pomoSetTime);
+        // clearInterval(pomodoroInterval);
+        // clearTimeout(pomoSetTime);
         break;
       }
       i = i + 1;
@@ -104,6 +107,9 @@ export const examplePomo = (time, $timeNum) => {
       // }
     }
   };
+
+  //==================================================================while 문
+
   $restBtnWrap.onclick = e => {
     if (!e.target.matches('.res_btn_wrap>button')) return;
     if (e.target === $restStartBtn) {
