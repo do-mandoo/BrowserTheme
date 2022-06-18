@@ -59,6 +59,8 @@
     <div class="main_container">
       <main class="main_main">
         <article class="page first_page">
+          <div class="drag_zone left_drag_zone"></div>
+
           <div class="main_top">
             <div class="jquery_weather hidden">
               <div class="main_top_top">
@@ -168,6 +170,7 @@
           </div> -->
         </article>
         <article class="page second_page">
+          <div class="drag_zone right_drag_zone"></div>
           <section class="main_left">
             <h1>음악 재생</h1>
             <div class="left_container">
@@ -193,9 +196,9 @@
                   </div>
                 </div>
                 <div class="music_list_wrap">
-                  <div class="music_item chill_mp3">chill</div>
-                  <div class="music_item happy_mp3">happy</div>
-                  <div class="music_item cozy_mp3">cozy</div>
+                  <div class="music_item chill_mp3">CHILL</div>
+                  <div class="music_item happy_mp3">HAPPY</div>
+                  <div class="music_item cozy_mp3">COZY</div>
                 </div>
               </div>
             </div>
@@ -205,20 +208,26 @@
             <div class="right_container">
               <div class="pomo pomodoro_timer">
                 <h3>뽀모도로</h3>
+                <div>
+                  <span>횟수: </span>
+                  <span class="count_num pomo_count">0</span>
+                </div>
                 <div class="timer_number pomodoro_timer_number">25:00</div>
                 <div class="btn_wrap time_btn_wrap">
-                  <button class="time_btn reset_btn">RESET</button>
+                  <button class="time_btn loop_btn">LOOP</button>
                   <button class="time_btn start_btn">START</button>
-                  <button class="time_btn stop_btn">STOP</button>
+                  <button class="time_btn pomo_stop_btn">STOP</button>
                 </div>
               </div>
               <div class="pomo pomodoro_rest_timer">
                 <h3>쉬는시간</h3>
+                <div>
+                  <span>횟수: </span>
+                  <span class="count_num rest_count">0</span>
+                </div>
                 <div class="timer_number rest_timer_number">05:00</div>
                 <div class="btn_wrap res_btn_wrap">
-                  <button class="time_btn rest_reset_btn">RESET</button>
                   <button class="time_btn rest_start_btn">START</button>
-                  <button class="time_btn rest_stop_btn">STOP</button>
                 </div>
               </div>
             </div>
@@ -232,6 +241,6 @@
     </div>
     <script src="../js2/pageSlide.js"></script>
     <script type="module" src="../js/theme.js"></script>
-    <script src="../js2/app.js"></script>
+    <script type="module" src="../js2/app.js"></script>
   </body>
 </html>
